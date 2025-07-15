@@ -4,99 +4,131 @@
   <meta charset="UTF-8">
   <title>MBTI2</title>
 <style>
-  /* Общие стили для таблиц */
+  /* Общие базовые стили для всех таблиц */
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1em;
-    font-family: Arial, sans-serif;
+    margin: 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
   }
-
   th, td {
-    padding: 0.6em 1em;
-    text-align: left;
-  }
-
-  /* Вариант 1: базовая таблица */
-  .table-basic th {
-    background-color: #007BFF;
-    color: white;
-  }
-
-  .table-basic, .table-basic th, .table-basic td {
-    border: 1px solid #ccc;
-  }
-
-  /* Вариант 2: таблица с полосками */
-  .table-striped th {
-    background-color: #343a40;
-    color: white;
-  }
-
-  .table-striped, .table-striped th, .table-striped td {
+    padding: 12px 15px;
     border: 1px solid #ddd;
   }
-
-  .table-striped tbody tr:nth-child(odd) {
-    background-color: #f8f9fa;
+  thead {
+    background-color: #009879;
+    color: #ffffff;
   }
 
-  /* Вариант 3: таблица с рамками */
-  .table-bordered {
-    border: 2px solid #6c757d;
+  /* 1. Простая таблица с эффектом наведения */
+  .table-hover tbody tr:hover {
+    background-color: #f1f7f6;
   }
 
-  .table-bordered th, .table-bordered td {
-    border: 1px solid #6c757d;
+  /* 2. Зебра (чередование цвета строк) */
+  .table-zebra tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
   }
 
-  /* Мобильная адаптация */
+  /* 3. Таблица с кнопками в ячейках */
+  .table-buttons td {
+    position: relative;
+  }
+  .table-buttons button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .table-buttons button:hover {
+    background-color: #0056b3;
+  }
 
-  /* Ширина до 320px */
-  @media (max-width: 320px) {
-    table {
-      font-size: 10px;
-    }
+  /* 4. Таблица с заголовками и подзаголовками (объединенные ячейки) */
+  .table-complex thead tr:first-child th {
+    background-color: #4a90e2;
+    text-align: center;
+    font-size: 18px;
+  }
+  .table-complex thead tr:nth-child(2) th {
+    background-color: #6ba4f8;
+    font-size: 14px;
+  }
 
-    th, td {
-      padding: 0.3em 0.5em;
-    }
+  /* Адаптивность */
 
-    /* Для узких экранов таблицы можно сделать горизонтальный скролл */
-    .table-basic, .table-striped, .table-bordered {
+  /* На очень маленьких экранах — таблицы превращаем в карточки */
+  @media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
       display: block;
-      overflow-x: auto;
+      width: 100%;
+    }
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    tbody tr {
+      margin-bottom: 1.5em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+    }
+    tbody tr td {
+      border: none;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+      white-space: normal;
+    }
+    tbody tr td::before {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
       white-space: nowrap;
+      font-weight: bold;
+      content: attr(data-label);
+      color: #333;
+    }
+    .table-buttons td button {
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 16px;
     }
   }
 
-  /* Ширина до 500px */
-  @media (max-width: 500px) {
+  /* Шрифты и отступы для разных экранов */
+
+  @media (max-width: 320px) {
     table {
       font-size: 12px;
     }
     th, td {
-      padding: 0.4em 0.7em;
+      padding: 8px 10px;
     }
   }
 
-  /* Ширина до 700px */
   @media (max-width: 700px) {
     table {
       font-size: 14px;
     }
     th, td {
-      padding: 0.5em 0.8em;
+      padding: 10px 12px;
     }
   }
 
-  /* Ширина до 1000px */
   @media (max-width: 1000px) {
     table {
-      font-size: 16px;
+      font-size: 15px;
     }
     th, td {
-      padding: 0.6em 1em;
+      padding: 12px 15px;
     }
   }
 
