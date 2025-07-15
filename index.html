@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>MBTI2</title>
 <style>
-  /* Убиваем наследование и устанавливаем фиксированную основу */
+  /* === Железобетонный сброс и шрифт === */
   table, thead, tbody, tfoot, tr, th, td,
   table * {
     font-family: Arial, sans-serif !important;
@@ -15,9 +15,9 @@
     text-transform: none !important;
     letter-spacing: normal !important;
     word-spacing: normal !important;
+    color: #222 !important;
   }
 
-  /* Даже кнопки, инпуты и прочее — тоже 16px */
   table button,
   table input,
   table select,
@@ -29,49 +29,84 @@
     line-height: 1.4 !important;
   }
 
-  /* Удалим уменьшение от браузеров */
   html {
     -webkit-text-size-adjust: none !important;
     -ms-text-size-adjust: none !important;
     text-size-adjust: none !important;
   }
 
-  /* На всякий случай — сброс стилей в адаптиве */
-  @media screen and (max-width: 10000px) {
-    table, table * {
-      font-size: 16px !important;
-    }
+  /* === Внешний вид таблицы как таблицы === */
+  table {
+    width: 100%;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    margin: 20px 0;
+    background-color: #fff;
   }
 
-  /* Конкретно 8-й столбец (если нужен отдельный размер — тут 16px) */
+  table th,
+  table td {
+    border: 1px solid #ccc !important;
+    padding: 10px 14px !important;
+    text-align: left;
+    background-color: #fff !important;
+  }
+
+  /* === Зебра: чередование строк === */
+  table tbody tr:nth-child(even) td {
+    background-color: #f9f9f9 !important;
+  }
+
+  /* === Hover-эффект === */
+  table tbody tr:hover td {
+    background-color: #eef6ff !important;
+  }
+
+  /* === Заголовок таблицы === */
+  table thead th {
+    background-color: #009879 !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-align: left !important;
+  }
+
+  /* === Специально: 8-й столбец (если нужен другой стиль) === */
   table th:nth-child(8),
   table td:nth-child(8) {
     font-size: 16px !important;
   }
 
-  /* Мобильная адаптация — таблица в карточку, но шрифт тот же */
+  /* === Адаптация: структура в мобиле, но шрифт НЕ меняется === */
   @media (max-width: 480px) {
-    table, thead, tbody, tr, th, td {
+    table,
+    thead,
+    tbody,
+    tfoot,
+    th,
+    td,
+    tr {
       display: block !important;
       width: 100% !important;
     }
 
-    thead tr {
+    thead {
       display: none !important;
     }
 
     tbody tr {
       margin-bottom: 1.5em;
-      border: 1px solid #ccc;
+      border: 1px solid #ccc !important;
       border-radius: 8px;
       padding: 10px;
-      background: #fff;
+      background-color: #fff !important;
     }
 
     tbody td {
-      position: relative;
       padding-left: 50% !important;
-      text-align: left;
+      position: relative !important;
+      border: none !important;
+      border-bottom: 1px solid #eee !important;
+      background-color: transparent !important;
     }
 
     tbody td::before {
@@ -80,8 +115,11 @@
       top: 12px;
       left: 15px;
       width: 45%;
-      font-weight: bold;
+      padding-right: 10px;
+      font-weight: bold !important;
+      color: #333 !important;
       font-size: 16px !important;
+      white-space: nowrap;
     }
   }
 </style>
