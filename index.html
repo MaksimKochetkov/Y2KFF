@@ -4,6 +4,49 @@
   <meta charset="UTF-8">
   <title>MBTI2</title>
 <style>
+  /* === Фиксированная шапка со ссылками === */
+.site-header {
+  background-color: #009879;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif !important;
+  font-size: 16px !important;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 16px !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #007f66;
+}
+
+/* === Адаптация для мобильных устройств === */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nav a {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px !important;
+  }
+}
+
   /* === Железобетонный сброс и шрифт === */
   table, thead, tbody, tfoot, tr, th, td,
   table * {
@@ -123,12 +166,17 @@
     }
   }
 </style>
-
-
-
 </head>
-<a href="ennea.html">ТАКЖЕ ВОССТАНОВЛЕН ТЕСТ НА ЭННЕАГРАММУ</a>
+  <header class="site-header">
+  <nav class="nav">
+    <a href="16p.html">16 Personalities</a>
+    <a href="ennea.html">Enneagram</a>
+    <a href="mbti.html">MBTI</a>
+    <a href="mbti2.html">MBTI Улучшенный</a>
+  </nav>
+</header>
 
+<h1>ВОССТАНОВЛЕННЫЙ</h1>
 <h1>Тест на когнитивные функции</h1>
 
 В этом тесте 156 вопросов. Для работы теста требуется поддержка JavaScript.
