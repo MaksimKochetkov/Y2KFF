@@ -141,7 +141,60 @@ input[type="radio"] {
 @media (max-width: 320px) {
   table { font-size: 11px; }
 }
+@media (max-width: 720px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
 
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 14px; /* базовый размер */
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  /* НЕ увеличиваем вторую колонку в таблицах с 2–5 столбцами */
+  tr td:nth-child(2):nth-last-child(1), /* всего 2 колонки */
+  tr td:nth-child(2):nth-last-child(2), /* 3 */
+  tr td:nth-child(2):nth-last-child(3), /* 4 */
+  tr td:nth-child(2):nth-last-child(4)  /* 5 */
+  {
+    font-size: 14px; /* обычный размер */
+    font-weight: normal;
+    color: #222;
+  }
+
+  /* Увеличиваем вторую колонку если всего 6 или более столбцов */
+  tr td:nth-child(2):nth-last-child(n+5) {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+  }
+}
   </style>
 </head>
 <a href="ennea.html">ТАКЖЕ ВОССТАНОВЛЕН ТЕСТ НА ЭННЕАГРАММУ</a>
