@@ -1,7 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>MBTI2</title>
+<style>
+  /* === Фиксированная шапка со ссылками === */
+.site-header {
+  background-color: #009879;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif !important;
+  font-size: 16px !important;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 16px !important;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #007f66;
+}
+
+/* === Адаптация для мобильных устройств === */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nav a {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px !important;
+  }
+}
+
+  /* === Железобетонный сброс и шрифт === */
+  table, thead, tbody, tfoot, tr, th, td,
+  table * {
+    font-family: Arial, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    word-spacing: normal !important;
+    color: #222 !important;
+  }
+
+  table button,
+  table input,
+  table select,
+  table textarea,
+  table span,
+  table a {
+    font-size: 16px !important;
+    font-family: Arial, sans-serif !important;
+    line-height: 1.4 !important;
+  }
+
+  html {
+    -webkit-text-size-adjust: none !important;
+    -ms-text-size-adjust: none !important;
+    text-size-adjust: none !important;
+  }
+
+  /* === Внешний вид таблицы как таблицы === */
+  table {
+    width: 100%;
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+    margin: 20px 0;
+    background-color: #fff;
+  }
+
+  table th,
+  table td {
+    border: 1px solid #ccc !important;
+    padding: 10px 14px !important;
+    text-align: left;
+    background-color: #fff !important;
+  }
+
+  /* === Зебра: чередование строк === */
+  table tbody tr:nth-child(even) td {
+    background-color: #f9f9f9 !important;
+  }
+
+  /* === Hover-эффект === */
+  table tbody tr:hover td {
+    background-color: #eef6ff !important;
+  }
+
+  /* === Заголовок таблицы === */
+  table thead th {
+    background-color: #009879 !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-align: left !important;
+  }
+
+  /* === Специально: 8-й столбец (если нужен другой стиль) === */
+  table th:nth-child(8),
+  table td:nth-child(8) {
+    font-size: 16px !important;
+  }
+
+  /* === Адаптация: структура в мобиле, но шрифт НЕ меняется === */
+  @media (max-width: 480px) {
+    table,
+    thead,
+    tbody,
+    tfoot,
+    th,
+    td,
+    tr {
+      display: block !important;
+      width: 100% !important;
+    }
+
+    thead {
+      display: none !important;
+    }
+
+    tbody tr {
+      margin-bottom: 1.5em;
+      border: 1px solid #ccc !important;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #fff !important;
+    }
+
+    tbody td {
+      padding-left: 50% !important;
+      position: relative !important;
+      border: none !important;
+      border-bottom: 1px solid #eee !important;
+      background-color: transparent !important;
+    }
+
+    tbody td::before {
+      content: attr(data-label);
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      width: 45%;
+      padding-right: 10px;
+      font-weight: bold !important;
+      color: #333 !important;
+      font-size: 16px !important;
+      white-space: nowrap;
+    }
+  }
+</style>
+</head>
+  <header class="site-header">
+  <nav class="nav">
+    <a href="16p.html">16 Personalities</a>
+    <a href="ennea.html">Enneagram</a>
+    <a href="mbti.html">MBTI</a>
+    <a href="index.html">MBTI Улучшенный</a>
+    Оригинальный автор - <a href="https://github.com/yuki0iq">https://github.com/yuki0iq</a> <br>
+    tg - <a href="https://t.me/yuki_the_girl">https://t.me/yuki_the_girl</a>
+  </nav>
+</header>
 <h1>ВОССТАНОВЛЕННЫЙ</h1>
 <h1>Тест на когнитивные функции</h1>
 
 В этом тесте 156 вопросов. Для работы теста требуется поддержка JavaScript.
+(Привет. Говорит чел, который восстановил эти тесты. Этот тест не очень, он показывает почти диаметрально противоположный мне (и не только мне) тип личности. <br>
+А вот улучшенный тест уже покруче - по буквам определил правильно (infp), а по когнитивкам как entp. Не знаю почему. В любом случае удачи!)
 
 <div id="test_contents">
 </div>
