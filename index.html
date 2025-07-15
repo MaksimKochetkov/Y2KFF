@@ -66,30 +66,30 @@
   /* === Специально: 8-й столбец меньшим шрифтом === */
   table th:nth-child(8),
   table td:nth-child(8) {
-    font-size: 14px !important;
+    font-size: 14px;
   }
 
   /* === Унификация шрифта при адаптиве === */
   @media (max-width: 1000px) {
-    table, td, tr, th {
+    table, td, tr, th, thead, tbody {
       font-size: 15px !important;
     }
   }
 
   @media (max-width: 700px) {
-    table, td, tr, th {
+    table, td, tr, th, thead, tbody {
       font-size: 14px !important;
     }
   }
 
   @media (max-width: 500px) {
-    table {
+    table, td, tr, th, thead, tbody {
       font-size: 13px !important;
     }
   }
 
   @media (max-width: 320px) {
-    table, td, tr, th {
+    table, td, tr, th, thead, tbody {
       font-size: 12px !important;
     }
   }
