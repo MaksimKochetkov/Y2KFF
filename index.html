@@ -15,107 +15,50 @@
       background: #f9f9f9;
     }
 
-    .table-wrapper {
-      overflow-x: auto;
-    }
+    * {
+  box-sizing: border-box;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
-      margin-bottom: 1em;
-      font-size: 14px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 16px;
+  background: #f9f9f9;
+}
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: left;
-    }
+.table-wrapper {
+  overflow-x: auto;
+}
 
-    th {
-      background-color: #f2f2f2;
-      font-weight: bold;
-    }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-bottom: 1em;
+  font-size: 14px;
+}
 
-    tr:nth-child(even) {
-      background-color: #f9f9f9;
-    }
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
 
-    tr:hover {
-      background-color: #e0f7fa;
-    }
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
 
-    /* ===== 📱 Мобильная адаптация таблицы (до 720px) ===== */
-    @media (max-width: 720px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
-      thead {
-        display: none;
-      }
+tr:hover {
+  background-color: #e0f7fa;
+}
 
-      tr {
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background: #fff;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        padding: 10px;
-      }
-
-      td {
-        position: relative;
-        padding-left: 50%;
-        border: none;
-        border-bottom: 1px solid #eee;
-        font-size: 14px;
-      }
-
-      td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        top: 8px;
-        font-weight: bold;
-        color: #333;
-        white-space: nowrap;
-      }
-
-      /* ✅ Увеличение второй колонки только на мобильных и только для 2–5 колонок */
-
-      /* 2 столбца */
-      tr td:nth-child(2):nth-last-child(1),
-      /* 3 столбца */
-      tr td:nth-child(2):nth-last-child(2),
-      /* 4 столбца */
-      tr td:nth-child(2):nth-last-child(3),
-      /* 5 столбцов */
-      tr td:nth-child(2):nth-last-child(4) {
-        font-size: 18px;
-        font-weight: bold;
-        color: #222;
-      }
-    }
-
-    /* ===== Дополнительная адаптация под ширину экрана ===== */
-    @media (max-width: 1000px) {
-      table { font-size: 14px; }
-    }
-
-    @media (max-width: 720px) {
-      table { font-size: 13px; }
-    }
-
-    @media (max-width: 500px) {
-      table { font-size: 12px; }
-    }
-
-    @media (max-width: 320px) {
-      table { font-size: 11px; }
-    }
-    input[type="text"],
+/* ==== Увеличение input ==== */
+input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
@@ -123,7 +66,7 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 input[type="date"],
-input[type="time"] {
+input[type="radio"] {
   font-size: 1.5em;
   padding: 0.75em;
   border: 1px solid #ccc;
@@ -132,6 +75,73 @@ input[type="time"] {
   box-sizing: border-box;
   margin-bottom: 1em;
 }
+
+/* ==== Мобильная адаптация таблиц ==== */
+@media (max-width: 720px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-weight: bold;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  /* ✅ Увеличиваем ТОЛЬКО вторую колонку, если ВСЕГО 2–5 колонок */
+  tr td:nth-child(2):nth-last-child(1), /* всего 2 колонки */
+  tr td:nth-child(2):nth-last-child(2), /* всего 3 */
+  tr td:nth-child(2):nth-last-child(3), /* всего 4 */
+  tr td:nth-child(2):nth-last-child(4)  /* всего 5 */
+  {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+  }
+}
+
+/* ==== Адаптивные размеры таблиц по ширине экрана ==== */
+@media (max-width: 1000px) {
+  table { font-size: 14px; }
+}
+
+@media (max-width: 720px) {
+  table { font-size: 13px; }
+}
+
+@media (max-width: 500px) {
+  table { font-size: 12px; }
+}
+
+@media (max-width: 320px) {
+  table { font-size: 11px; }
+}
+
   </style>
 </head>
 <a href="ennea.html">ТАКЖЕ ВОССТАНОВЛЕН ТЕСТ НА ЭННЕАГРАММУ</a>
